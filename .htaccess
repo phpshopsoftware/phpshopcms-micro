@@ -1,20 +1,14 @@
 DirectoryIndex index.php
-Options -Indexes 
 
 AddDefaultCharset windows-1251
-AddType text/csv csv
 RewriteEngine On
-
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php
 
-<files *.ini>
-Order Deny,Allow
-Deny From All
-</files>
-<files *.tpl>
+# Запрет доступа к файлам лицензии, шаблонов, конфигурации
+<files ~ "\.(lic|ini|tpl|core\.php|inc\.php|hook\.php|class\.php|sql)$"> 
 Order Deny,Allow
 Deny From All
 </files>

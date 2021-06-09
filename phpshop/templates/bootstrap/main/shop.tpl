@@ -143,7 +143,7 @@
                 <div class="bar-padding-top-fix visible-xs visible-sm"> </div>
                 <div class="col-md-9 col-xs-12 main"> 
                     @DispShop@
-                    <div class="visible-lg visible-md">@banersDisp@</div>
+                    <p><br></p>
 
                 </div>
             </div>
@@ -160,7 +160,7 @@
                     </form>   
                 </span>
                  <p>
-                    <span class="text-muted visible-lg visible-md small">Работает под управлением <a href="http://www.phpshopcms.ru/" class="sgfooter" target="_blank" title="PHPShop CMS Free">PHPShop.CMS Micro</a>.</span></p>
+                    <span class="text-muted visible-lg visible-md small">Работает под управлением <a href="https://www.phpshopcms.ru/" class="sgfooter" target="_blank" title="PHPShop CMS Free">PHPShop.CMS Micro</a>.</span></p>
             </footer>
         </div>
 
@@ -187,50 +187,6 @@
             </div>
         </div>
         <!--/ Модальное окно мобильного поиска -->
-
-        <!-- Модальное окно сообщения -->
-        <div class="modal fade bs-example-modal-sm" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Сообщение</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form role="form" method="post" name="forma_message" action="/forma/">
-                            <div class="form-group">
-                                <label>Заголовок</label>
-                                <input type="text" name="subject" value="" class="form-control" required="">
-                            </div>
-                            <div class="form-group">
-                                <label>Имя</label>
-                                <input type="text" name="nameP" value="" class="form-control"  required="">
-                            </div>
-                            <div class="form-group">
-                                <label>E-mail</label>
-                                <input type="email" name="mail" value="" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Сообщение</label>
-                                <textarea name="message" class="form-control" required=""></textarea>
-                            </div>
-                            <div class="form-group">
-                                <span class="pull-right">
-                                    <input type="hidden" name="send_f" value="ok">
-                                    <button type="submit" class="btn btn-primary">Отправить</button>
-                                </span>
-                                <img src="phpshop/captcha2.php" alt="" border="0" align="left" style="margin-right:10px"> <input type="text" name="key"   class="form-control" id="exampleInputEmail1" placeholder="Код..." style="width:50px" required="">
-
-                            </div>
-
-                        </form>  
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/ Модальное окно сообщения -->
-
 
         <!-- Fixed mobile bar -->
         <div class="bar-padding-fix visible-xs visible-sm"> </div>

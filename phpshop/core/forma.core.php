@@ -41,6 +41,7 @@ class PHPShopForma extends PHPShopCore {
      * Ёкшен отправка формы при получении $_POST[message]
      */
     function message() {
+        
         if(!empty($_SESSION['text']) and $_POST['key']==$_SESSION['text']) {
             $this->send();
         }else $this->set('Error',"ќшибка ключа, повторите попытку ввода ключа");
