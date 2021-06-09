@@ -1,0 +1,105 @@
+
+<html>
+<head>
+<title>Файловый браузер</title>
+<script type="text/javascript" language="JavaScript" src="../../tiny_mce_popup.js"></script>
+<script>
+
+
+path = '';
+
+domain = parent.window.domain;
+log = parent.window.log;
+pas = parent.window.pas
+
+function selectURL(){
+var url = document.getElementById("url_img").value;
+var win = tinyMCEPopup.getWindowArg("window");
+
+// insert information now
+win.document.getElementById('src').value = url;
+
+win.ImageDialog.showPreviewImage(url);
+
+// close popup window
+tinyMCEPopup.close();
+}
+
+
+
+function getIcon(img){
+    document.getElementById("pre_img").src='http://'+domain+'/UserFiles/Image/'+path+img;
+	document.getElementById("url_img").value='http://'+domain+'/UserFiles/Image/'+path+img;
+}
+
+function connectXML(dir){
+
+var url = 'http://'+domain+'/base-xml-manager/1c/xml.php';
+var sql='<phpshop><sql><method>image</method><vars>'+dir+'</vars><from>table_name11</from></sql></phpshop>';
+var mylog=log;
+var mypas=pas;
+var send_value='log='+mylog+'&pas='+mypas;
+send_value+='&sql='+sql;
+var xmlhttp = new ActiveXObject('Msxml2.XMLHTTP');
+xmlhttp.open('POST', url, false);
+xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+try{
+xmlhttp.send(send_value);
+}catch(e){}
+var texttes = xmlhttp.responseText;  
+var xmldoc =  new ActiveXObject('Microsoft.XMLDOM');
+xmldoc.async = false;
+xmldoc.loadXML(texttes); 
+
+//alert(texttes);
+
+if(texttes.length < 10){
+alert("Ошибка связи с сервером "+path+"\nПроверьте настройку подключения...");
+}
+
+
+var s="";
+var rootElement = xmldoc.documentElement;
+var itemList = xmldoc.getElementsByTagName('row');
+var name = xmldoc.getElementsByTagName('name');
+var type = xmldoc.getElementsByTagName('type');
+
+
+numItems = itemList.length;
+for (var i=0; i< numItems; i++){
+try{
+s+='<tr>';
+
+if(type[i].firstChild.nodeValue == 'dir')
+s+='<td class=forma valign="middle"><img src="icons/dir.gif" border="0" hspace="3" align="absmiddle"><a href="javascript:connectXML(\''+name[i].firstChild.nodeValue+'/\')">'+name[i].firstChild.nodeValue+'</a></td>';
+
+else 
+s+='<td class=forma valign="middle"><img src="icons/'+type[i].firstChild.nodeValue+'.gif" border="0" hspace="3" align="absmiddle"><a href="javascript:getIcon(\''+name[i].firstChild.nodeValue+'\')">'+name[i].firstChild.nodeValue+'</a></td>';
+
+s+='</tr>';
+}catch(e){}
+   }
+
+var t='<table cellpadding="0" cellspacing="1" width="300" border="0"><tr><td><img src="icons/dirup.gif" border="0" hspace="3" align="absmiddle"><a href="javascript:connectXML(\''+path+'\')">..</a></td></tr>';
+document.getElementById('filemanager').innerHTML = t+s+'</table>';
+path=dir;
+}
+
+</script>
+</head>
+
+<body onload="connectXML('')">
+
+<table>
+<tr>
+<td valign="top" width="300"><iframe id="pre_img" width="150" height="400" src=""></iframe></td><td valign="top" bgcolor="white" style="border: thin inset White;"><div style="height:400px;overflow:auto;" id="filemanager" name="filemanager"></div></td>
+<tr>
+</table>
+
+<input type="text" value="" id="url_img" style="width:100%" name="url_img">
+<p align="right"  width="100%">
+<input type="button" value="Отмена" onclick="tinyMCEPopup.close();">
+<input type="button" value="Применить" onclick="selectURL()">
+</p>
+</body>
+</html>

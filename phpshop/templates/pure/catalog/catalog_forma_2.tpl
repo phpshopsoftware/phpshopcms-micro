@@ -1,0 +1,1 @@
+<li class="parent item11"><a href="javascript:;"><span style="cursor:pointer" onClick="pressbutt(@catalogId@,100,'@catalogTemplates@');">@catalogName@</span></a><ul id="m@catalogId@" style="position:absolute;left:0px;top:0px;bottom:0px;right:0px;visibility:hidden;">@catalogPodcatalog@</ul></li>
