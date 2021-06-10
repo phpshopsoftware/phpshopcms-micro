@@ -5,8 +5,8 @@ class PHPShopCatalogElement extends PHPShopElements {
     /**
      * Конструктор
      */
-    function PHPShopCatalogElement() {
-        parent::PHPShopElements();
+    function __construct() {
+        parent::__construct();
     }
 
     /**

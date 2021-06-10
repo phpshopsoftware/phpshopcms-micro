@@ -11,8 +11,8 @@ class PHPShopIndex extends PHPShopCore {
     /**
      * Конструктор
      */
-    function PHPShopIndex() {
-        parent::PHPShopCore();
+    function __construct() {
+        parent::__construct();
     }
 
 

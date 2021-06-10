@@ -1,4 +1,4 @@
-<?
+<?php
 ob_start();
 ob_implicit_flush(0);
 /**
@@ -7,7 +7,6 @@ ob_implicit_flush(0);
  * @return mixed
  */
 function CheckCanGzip(){
-    global $HTTP_ACCEPT_ENCODING;
     if (headers_sent() || connection_aborted()){
         return 0;
     }
@@ -24,7 +23,7 @@ function CheckCanGzip(){
 function GzDocOut($level,$debug){
     $ENCODING = CheckCanGzip();
     if ($ENCODING){
-        print "<!-- Use compress $ENCODING -->";
+        //print "<!-- Use compress $ENCODING -->";
         $Contents = ob_get_contents();
         ob_end_clean();
         if ($debug){

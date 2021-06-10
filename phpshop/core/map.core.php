@@ -10,12 +10,12 @@ class PHPShopMap extends PHPShopCore {
     /**
      * Конструктор
      */
-    function PHPShopMap() {
+    function __construct() {
 
         // Отладка
         $this->debug=false;
 
-        parent::PHPShopCore();
+        parent::__construct();
     }
 
 

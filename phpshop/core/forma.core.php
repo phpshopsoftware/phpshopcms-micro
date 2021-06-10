@@ -11,12 +11,12 @@ class PHPShopForma extends PHPShopCore {
     /**
      * Конструктор
      */
-    function PHPShopForma() {
+    function __construct() {
         $this->debug=false;
         
         // список экшенов
         $this->action=array("post"=>"message","nav"=>"index");
-        parent::PHPShopCore();
+        parent::__construct();
     }
 
 

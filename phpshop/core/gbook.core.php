@@ -6,8 +6,8 @@ class PHPShopGbook extends PHPShopCore {
     /**
      * Конструктор
      */
-    function PHPShopGbook() {
-        parent::PHPShopCore();
+    function __construct() {
+        parent::__construct();
     }
 
     /**

@@ -10,8 +10,8 @@ class PHPShopCoreElement extends PHPShopElements {
     /**
      * Конструктор
      */
-    function PHPShopCoreElement() {
-        parent::PHPShopElements();
+    function __construct() {
+        parent::__construct();
     }
 
     /**
@@ -82,8 +82,8 @@ class PHPShopSkinElement extends PHPShopElements {
     /**
      * Конструктор
      */
-    function PHPShopSkinElement() {
-        parent::PHPShopElements();
+    function __construct() {
+        parent::__construct();
 
         // Экшены
         $this->setAction(array('post' => 'skin', 'get' => 'skin'));
@@ -156,8 +156,8 @@ class PHPShopTextElement extends PHPShopElements {
     /**
      * Конструктор
      */
-    function PHPShopTextElement() {
-        parent::PHPShopElements();
+    function __construct() {
+        parent::__construct();
     }
 
     /**

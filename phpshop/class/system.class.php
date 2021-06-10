@@ -12,7 +12,7 @@ class PHPShopSystem{
     /**
      * Конструктор
      */
-    function PHPShopSystem() {
+    function __construct() {
         global $PHPShopBase;
         $this->System = $PHPShopBase;
     }

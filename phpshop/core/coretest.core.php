@@ -10,8 +10,8 @@ class PHPShopCoretest extends PHPShopCore {
     /**
      * Конструктор
      */
-    function PHPShopCoretest() {
-        parent::PHPShopCore();
+    function __construct() {
+        parent::__construct();
     }
 
     /**

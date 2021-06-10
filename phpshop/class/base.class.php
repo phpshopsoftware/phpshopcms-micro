@@ -27,7 +27,7 @@ class PHPShopBase {
      * Подключения к БД
      * @param string $iniPath путь до конфигурационного файла config.ini
      */
-    function PHPShopBase($iniPath) {
+    function __construct($iniPath) {
         $this->iniPath=$iniPath;
         $this->SysValue=parse_ini_file($this->iniPath,1);
         $GLOBALS['SysValue']=$this->SysValue;

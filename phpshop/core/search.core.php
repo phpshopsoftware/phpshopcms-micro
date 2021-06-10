@@ -10,14 +10,14 @@ class PHPShopSearch extends PHPShopCore {
     /**
      * Конструктор
      */
-    function PHPShopSearch() {
+    function __construct() {
 
         // Отладка
         $this->debug=false;
 
         // Список экшенов
         $this->action=array("post"=>"words","nav"=>"index");
-        parent::PHPShopCore();
+        parent::__construct();
     }
     /**
      * Экшен по умолчанию, вывод формы

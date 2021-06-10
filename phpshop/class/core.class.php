@@ -65,7 +65,7 @@ class PHPShopCore {
      * @global array $PHPShopNav
      * @global array $PHPShopModules
      */
-    function PHPShopCore() {
+    function __construct() {
         global $PHPShopSystem, $PHPShopNav, $PHPShopModules;
 
         $this->SysValue = &$GLOBALS['SysValue'];

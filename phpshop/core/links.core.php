@@ -6,8 +6,8 @@ class PHPShopLinks extends PHPShopCore {
     /**
      * Конструктор
      */
-    function PHPShopLinks() {
-        parent::PHPShopCore();
+    function __construct() {
+        parent::__construct();
     }
 
     /**

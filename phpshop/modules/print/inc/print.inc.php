@@ -3,7 +3,7 @@
 class PHPShopPrintForma {
     var $active_path=array('page','index','market','soft');
 
-    function PHPShopPrintForma($name='Печатная форма') {
+    function __construct($name='Печатная форма') {
         $this->PHPShopNav= new PHPShopNav();
         $this->name=$name;
 

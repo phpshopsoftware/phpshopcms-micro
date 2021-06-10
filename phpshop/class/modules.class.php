@@ -27,7 +27,7 @@ class PHPShopModules {
      * Конструктор
      * @param string $ModDir  Относительное размещение модулей
      */
-    function PHPShopModules($ModDir = "phpshop/modules/") {
+    function __construct($ModDir = "phpshop/modules/") {
         $this->ModDir = $ModDir;
         $this->objBase = $GLOBALS['SysValue']['base']['table_name2'];
 

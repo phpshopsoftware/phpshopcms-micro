@@ -10,8 +10,8 @@ class PHPShopNews extends PHPShopCore {
     /**
      * Конструктор
      */
-    function PHPShopNews() {
-        parent::PHPShopCore();
+    function __construct() {
+        parent::__construct();
     }
 
     /**

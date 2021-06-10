@@ -36,7 +36,7 @@ class PHPShopElements {
      * @global obj $PHPShopNav
      * @global obj $PHPShopModules
      */
-    function PHPShopElements() {
+    function __construct() {
         global $PHPShopSystem, $PHPShopNav, $PHPShopModules;
 
         $this->SysValue = &$GLOBALS['SysValue'];

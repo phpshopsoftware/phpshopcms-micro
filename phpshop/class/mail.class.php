@@ -32,7 +32,7 @@ class PHPShopMail {
      * @param string $zag заголовок письма
      * @param string $content содежание письма
      */
-    function PHPShopMail($to,$from,$zag,$content) {
+    function __construct($to,$from,$zag,$content) {
         $this->from=$from;
         $this->zag="=?".$this->codepage."?B?".base64_encode($zag)."?=";
         $this->to=$to;
